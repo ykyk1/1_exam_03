@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >  
+<mapper namespace="com.hqyj.dao.ExamQuestionDao" >  
+
+<insert id="insert" parameterType="com.hqyj.pojo.ExamQuestion" useGeneratedKeys="true" keyProperty="questionId" keyColumn="question_id">
+insert into exam_questions(title,score,type) values(#{title},#{score},#{type})
+
+</insert>
+
+
+<select id="queryAllQuestion" resultType="com.hqyj.pojo.ExamQuestion">
+select question_id questionId,title,score,type from exam_questions
+</select>
+</mapper> 
